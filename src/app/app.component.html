@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>E-commerce / Research & Cart</span>
+    <div class="user">
+      <span style="margin: 0 1.25rem;" *ngIf="isUserLoggedIn">{{ user?.firstname }} {{ user?.lastname }}</span>
+      <button mat-raised-button color="infos" *ngIf="isUserLoggedIn" (click)="logout()">Logout</button>
+      <button mat-raised-button color="infos" routerLink="/account/login" *ngIf="!isUserLoggedIn">Connexion / Register</button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container">
+  <div class="side side-1">
+    <h1>Onlines Sales</h1>
+    <app-research></app-research>
+    <router-outlet name="display"></router-outlet>
+  </div>
+  <div class="side side-2">
+    <alert></alert>
+    <app-layout></app-layout>
+    <app-cart></app-cart>
+  </div>
+</div>

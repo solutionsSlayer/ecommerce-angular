@@ -1,0 +1,8 @@
+<mat-list>
+    <mat-list-item *ngFor="let product of products">
+        <button (click)="addProduct(product._id)" mat-mini-fab color="primary" style="margin: 0 1rem;">+</button>
+        {{ product?.nb }}
+        <button (click)="removeProduct(product._id)" mat-mini-fab color="primary" style="margin: 0 1rem;">-</button>
+        {{ product.name }} - {{ product.price }}
+    </mat-list-item>
+</mat-list>

@@ -1,0 +1,7 @@
+<div *ngIf="userIsLoggedIn">
+    <button  mat-raised-button color="primary" (click)="cartDisplay()">Access cart: {{ user.firstname }} / {{ user.lastname }}</button>
+
+    <router-outlet name="cartDisplay"></router-outlet>
+    <router-outlet name="cartManagement"></router-outlet>
+    <router-outlet name="cartValidation"></router-outlet>
+</div>

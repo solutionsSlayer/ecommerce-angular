@@ -1,0 +1,7 @@
+<mat-list>
+    <mat-list-item *ngFor="let product of products">
+        <a [routerLink]="['/cart', { outlets: { 'cartManagement': ['management', 'add', product._id, 0]}}]">
+            {{ product.name }} - {{ product.brand }} : {{ product.price }}
+        </a>
+    </mat-list-item>
+</mat-list>

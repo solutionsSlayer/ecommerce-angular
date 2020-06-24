@@ -1,0 +1,11 @@
+<div clas="container">
+    <mat-form-field *ngFor="let selector of selectors">
+        <mat-label>{{ selector.name }}</mat-label>
+        <mat-select (selectionChange)="selection($event, selector.name)" id="{{selector.name}}">
+            <mat-option *ngFor="let value of selector.values" [value]="value">
+                {{ value }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" (click)="productSelection()">Search</button>
+</div>
